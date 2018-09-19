@@ -1,0 +1,98 @@
+
+" fix pasting of python code
+" set paste
+" execute pathogen#infect()
+" syntax on
+filetype plugin indent on
+" set background=dark
+" colorscheme solarized
+" colorscheme corporation_modified
+"trying to fix emmet and ycm
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css  EmmetInstall
+" let g:user_emmet_leader_key=','
+" let g:user_emmet_expandabbr_key='<Tab>'
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+" autocmd FileType html,css imap <TAB> <plug>(emmet-expand-abbr)
+"terminal colors, required by many plugins
+set t_Co=256
+hi MatchParen cterm=none ctermbg=green ctermfg=blue
+" highlight Normal ctermbg=black
+
+"for lightline
+set laststatus=2
+
+"no need for additional INSERT in vim since we have lightline
+set noshowmode
+
+"allows buffer to be unsaved before switching
+set hidden
+
+" nnoremap : ;
+" nnoremap ; :
+
+" ale
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+"basic
+set number
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set clipboard=unnamed
+hi MatchParen cterm=none ctermbg=White ctermfg=Blue
+" hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+"save with two escape key presses
+
+
+nnoremap <Esc><Esc> :w<CR>
+
+"prettier
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 80
+"
+" " number of spaces per indentation level
+" let g:prettier#config#tab_width = 2
+"
+" " use tabs over spaces
+" g:prettier#config#use_tabs = 'false'
+"
+" " print semicolons
+" g:prettier#config#semi = 'true'
+"
+" " single quotes over double quotes
+" g:prettier#config#single_quote = 'true'
+"
+" " print spaces between brackets
+" g:prettier#config#bracket_spacing = 'false'
+"
+" " put > on the last line instead of new line
+" g:prettier#config#jsx_bracket_same_line = 'true'
+"
+" " none|es5|all
+" g:prettier#config#trailing_comma = 'all'
+"
+" " flow|babylon|typescript|postcss
+" g:prettier#config#parser = 'flow'
+"
+" let g:enable_ycm_at_startup = 0
+" let g:jedi#completions_command = "<C-n>"
+autocmd FileType python setlocal completeopt-=preview
+
+let g:jedi#show_call_signatures = "2"
+inoremap <expr> <Tab> SkipClosingParentheses()
+
+function! SkipClosingParentheses()
+  let line = getline('.')
+  let current_char = line[col('.')-1]
+
+  "Ignore EOL
+  if col('.') == col('$')
+    return "\t"
+  end
+
+  return stridx(']})', current_char)==-1 ? "\t" : "\<Right>"
+endfunction
