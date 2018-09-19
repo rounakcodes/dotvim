@@ -65,14 +65,14 @@ highlight PmenuSel ctermfg=0 ctermbg=108 guibg=#ffffff guifg=#000000
 " NERDTree Mapping
 
 
-let g:NERDTreeMapJumpNextSibling = '<C-S>'
-let g:NERDTreeMapJumpPrevSibling = '<C-T>'
-let g:NERDTreeMapJumpFirstChild = 'S'
-let g:NERDTreeMapJumpLastChild = 'T'
-let g:NERDTreeMapOpenVSplit = 'v'
-let g:NERDTreeMapOpenInTab = 'k'
+"let g:NERDTreeMapJumpNextSibling = '<C-S>'
+"let g:NERDTreeMapJumpPrevSibling = '<C-T>'
+"let g:NERDTreeMapJumpFirstChild = 'S'
+"let g:NERDTreeMapJumpLastChild = 'T'
+"let g:NERDTreeMapOpenVSplit = 'v'
+"let g:NERDTreeMapOpenInTab = 'k'
 
-nmap <Leader>n :NERDTreeFind<CR>
+"nmap <Leader>n :NERDTreeFind<CR>
 "let g:AutoPairsShortcutToggle = 'C-E'
 
 " always move cursor to the last line of yanked block
