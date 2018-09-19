@@ -62,4 +62,4 @@ set showcmd
 "inoremap <C-e> <C-o>A
 " alternative which can allow using tab key without disturbing other uses of
 " tab key
-inoremap <expr> > search('\%#[]>)}]', 'n') ? '<Right>' : '<Tab>'
+inoremap <expr> > search('\%#[]>)}]', 'n') ? '<Right>' : '>'
