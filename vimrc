@@ -46,7 +46,6 @@ if has("autocmd")
 endif
 
 
-
 " key mappings
 source ~/.vim/vimrc.keymap
 
@@ -59,3 +58,8 @@ set noshowmode
 " see typed keys in vim status bar
 set showcmd
 
+" get past ), } etc...will work with any letter actually
+"inoremap <C-e> <C-o>A
+" alternative which can allow using tab key without disturbing other uses of
+" tab key
+inoremap <expr> > search('\%#[]>)}]', 'n') ? '<Right>' : '<Tab>'
