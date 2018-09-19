@@ -1,8 +1,3 @@
-" get past ), } etc...will work with any letter actually
-"inoremap <C-e> <C-o>A
-" alternative which can allow using tab key without disturbing other uses of
-" tab key
-":inoremap <expr> <Tab> search('\%#[]>)}]', 'n') ? '<Right>' : '<Tab>'
 " ---start buffer related mappings ---
 " press tab to switch to new buffer
 :nnoremap <Tab> :bnext<CR>
@@ -114,9 +109,9 @@ set colorcolumn=80
 "let g:user_emmet_install_global = 0
 autocmd FileType html,css,js EmmetInstall
 "let g:user_emmet_leader_key='<C-Z>'
-let g:user_emmet_leader_key='<,>'
+"let g:user_emmet_leader_key='<,>'
 
-"let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_settings = { 'javascript.jsx' : { 'extends' : 'jsx', }, }
 
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
@@ -127,3 +122,4 @@ autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#enable_smart_case = 1
+
