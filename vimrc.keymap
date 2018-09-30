@@ -99,7 +99,9 @@ let g:UltiSnipsJumpForwardTrigger = "<c-u>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-space>"
 
 let g:AutoPairsShortcutToggle = '<C-K>'
-
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'

@@ -25,6 +25,8 @@ set smartcase
 set splitbelow
 set splitright
 set synmaxcol=120
+" jump to matching bracket with %
+set showmatch
 set timeout timeoutlen=2000
 "for vim-hug-neovim-rpc
 set pyxversion=0
@@ -45,6 +47,9 @@ if has("autocmd")
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
+
+" this is if tpope commentary  is installed
+"autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
 " key mappings
 source ~/.vim/vimrc.keymap
