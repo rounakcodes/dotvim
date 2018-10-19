@@ -30,7 +30,7 @@ set showmatch
 set timeout timeoutlen=2000
 "for vim-hug-neovim-rpc
 set pyxversion=0
-colorscheme corporation_modified
+"colorscheme corporation_modified
 "colorscheme Black
 " disable highlighting of matching parenthesis ()
 let g:loaded_matchparen=1
@@ -68,3 +68,4 @@ set showcmd
 " alternative which can allow using tab key without disturbing other uses of
 " tab key
 inoremap <expr> > search('\%#[]>)}]', 'n') ? '<Right>' : '>'
+colorscheme codedark

@@ -86,8 +86,8 @@ map  F <Plug>(easymotion-bd-f)
 map <Leader>l <Plug>(easymotion-bd-jk)
 map <Leader>/ <Plug>(easymotion-sn)
 omap <Leader>/ <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+map  e <Plug>(easymotion-next)
+map  E <Plug>(easymotion-prev)
 
 " understand easy motion
 
@@ -104,7 +104,8 @@ let g:NERDCustomDelimiters={
 \}
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='codedark'
+"let g:airline_theme='powerlineish'
 
 set laststatus=2
 set colorcolumn=80

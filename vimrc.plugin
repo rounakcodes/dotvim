@@ -17,6 +17,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " and you don't have to run install script if you use fzf only in Vim.
 "
 "
+Plug 'tomasiser/vim-code-dark'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
