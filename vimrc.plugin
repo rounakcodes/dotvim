@@ -1,6 +1,4 @@
-set nocompatible              " be iMproved, required for Vundle
-filetype off                  " required for Vundle
-" set the runtime path to include Vundle and initialize
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -10,20 +8,23 @@ call vundle#end()
 
 call plug#begin('~/.vim/plugged')
 
-
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Both options are optional. You don't have to install fzf in ~/.fzf
 " and you don't have to run install script if you use fzf only in Vim.
-"
-"
+Plug 'yardnsm/vim-import-cost'
+Plug 'vuejs/eslint-plugin-vue'
+Plug 'posva/vim-vue'
+Plug 'heavenshell/vim-jsdoc'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomasiser/vim-code-dark'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
 Plug 'roxma/nvim-yarp'
 "Plug 'bdauria/angular-cli.vim'
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
@@ -54,6 +55,7 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'digitaltoad/vim-pug'
 Plug 'jiangmiao/auto-pairs'
 "Plug 'bdauria/vim-easyclip'
+Plug 'prettier/vim-prettier'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
 "Plug 'vim-scripts/BufOnly.vim'

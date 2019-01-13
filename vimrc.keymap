@@ -83,19 +83,24 @@ map  f <Plug>(easymotion-f)
 map  F <Plug>(easymotion-bd-f)
 "map  <Leader>é <Plug>(easymotion-w)
 "map  <Leader>É <Plug>(easymotion-bd-w)
-map <Leader>l <Plug>(easymotion-bd-jk)
+"map <Leader>l <Plug>(easymotion-bd-jk)
 map <Leader>/ <Plug>(easymotion-sn)
 omap <Leader>/ <Plug>(easymotion-tn)
 map  e <Plug>(easymotion-next)
 map  E <Plug>(easymotion-prev)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
 
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " understand easy motion
 
 filetype plugin indent on
 let g:UltiSnipsSnippetsDir="~/.vim/plugged/vim-snippets/UltiSnips"
 let g:UltiSnipsSnippetDirectories=["plugged/vim-snippets/UltiSnips"]
 let g:UltiSnipsExpandTrigger = "<c-u>"
-let g:UltiSnipsJumpForwardTrigger = "<c-u>"
+let g:UltiSnipsJumpForwardTrigger = "<c-f>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-space>"
 
 let g:AutoPairsShortcutToggle = '<C-K>'

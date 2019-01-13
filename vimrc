@@ -1,3 +1,5 @@
+" show $ sign after whitespace
+set list
 set nocompatible 
 set termencoding=utf8 
 set encoding=utf8
@@ -34,7 +36,11 @@ set pyxversion=0
 "colorscheme Black
 " disable highlighting of matching parenthesis ()
 let g:loaded_matchparen=1
-
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 " change cursor depending on vim mode
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
@@ -47,12 +53,32 @@ if has("autocmd")
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
+"swap words separted by commas
 
+nnoremap <silent> gl "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+nnoremap <silent> gh "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+"pretteier start
+" when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"pretteier end 
 " this is if tpope commentary  is installed
 "autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
+"NERDTree start
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
+""NERDTree end
+"autocmd VimEnter * NERDTree
+"Remove all trailing whitespace by pressing F6
+nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " key mappings
 source ~/.vim/vimrc.keymap
+
+" js doc mapping
+nmap <silent> <C-l> <Plug>(jsdoc)
 
 
 " plugins
@@ -69,3 +95,5 @@ set showcmd
 " tab key
 inoremap <expr> > search('\%#[]>)}]', 'n') ? '<Right>' : '>'
 colorscheme codedark
+" supposed to disable comments continution, probably not working
+autocmd BufNewFile,BufRead * setlocal formatoptions+=cqn
